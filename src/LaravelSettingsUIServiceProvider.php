@@ -26,6 +26,10 @@ class LaravelSettingsUIServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/resources/lang/en/laravel-settings-ui.php' => resource_path('lang/en/laravel-settings-ui.php')
         ], 'languages');
+		
+		$this->publishes([
+            __DIR__.'/config/laravel-settings-ui.php' => app_path('../config/laravel-settings-ui.php')
+        ], 'configs');
 
         $this->publishes([
             __DIR__.'/resources/views/laravel-settings-ui.blade.php' => resource_path('views/vendor/laravel-settings-ui.blade.php')

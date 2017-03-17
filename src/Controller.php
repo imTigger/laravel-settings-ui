@@ -3,11 +3,12 @@ namespace Imtigger\LaravelSettingsUI;
 
 use Illuminate\Routing\Controller as BaseController;
 use App\Forms\LaravelSettingsForm;
+use Illuminate\Support\Facades\Config;
 use Kris\LaravelFormBuilder\FormBuilder;
-use Input;
-use Redirect;
-use Validator;
-use Setting;
+use \Illuminate\Support\Facades\Input;
+use \Illuminate\Support\Facades\Redirect;
+use \Illuminate\Support\Facades\Validator;
+use \anlutro\LaravelSettings\Facade as Setting;
 
 class Controller extends BaseController
 {
@@ -19,7 +20,7 @@ class Controller extends BaseController
 
     public function get(FormBuilder $formBuilder)
     {
-        $form = $formBuilder->create(LaravelSettingsForm::class, [
+        $form = $formBuilder->create($this->getForm(), [
             'method' => 'post'
         ]);
 
@@ -30,12 +31,12 @@ class Controller extends BaseController
             $field->setValue(Setting::get($fieldName));
         };
 
-        return view("vendor.laravel-settings-ui", ['form' => $form]);
+        return view($this->getView(), ['form' => $form]);
     }
 
     public function post(FormBuilder $formBuilder)
     {
-        $form = $formBuilder->create(LaravelSettingsForm::class, [
+        $form = $formBuilder->create($this->getForm(), [
             'method' => 'post'
         ]);
 
@@ -58,5 +59,13 @@ class Controller extends BaseController
 
             return redirect()->route("laravel-settings-ui")->with('status', trans('laravel-settings-ui.message.saved'));
         }
+    }
+
+    private function getView() {
+        return Config::get("laravel-settings-ui.view", "laravel-settings-ui::laravel-settings-ui");
+    }
+
+    private function getForm() {
+        return Config::get("laravel-settings-ui.form", 'App\Forms\LaravelSettingsForm');
     }
 }
