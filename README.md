@@ -1,2 +1,4 @@
-# laravel-settings-ui
-Simple UI for anlutro/laravel-settings
+# Laravel Settings UI
+Simple UI for [anlutro/laravel-settings](https://github.com/anlutro/laravel-settings)
+
+- WIP
