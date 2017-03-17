@@ -57,7 +57,7 @@ class Controller extends BaseController
 
             Setting::save();
 
-            return redirect()->route("laravel-settings-ui")->with('status', trans('laravel-settings-ui.message.saved'));
+            return redirect()->route("laravel-settings-ui")->with('status', trans('laravel-settings-ui::laravel-settings-ui.message.saved'));
         }
     }
 

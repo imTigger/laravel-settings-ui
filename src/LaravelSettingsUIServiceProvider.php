@@ -17,15 +17,12 @@ class LaravelSettingsUIServiceProvider extends ServiceProvider
 
     public function boot()
     {
+		$this->loadTranslationsFrom(__DIR__.'/resources/languages', 'laravel-settings-ui');
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-settings-ui');
 
         $this->publishes([
             __DIR__.'/Forms/LaravelSettingsForm.php' => app_path('Forms/LaravelSettingsForm.php')
         ], 'forms');
-
-        $this->publishes([
-            __DIR__.'/resources/lang/en/laravel-settings-ui.php' => resource_path('lang/en/laravel-settings-ui.php')
-        ], 'languages');
 		
 		$this->publishes([
             __DIR__.'/config/laravel-settings-ui.php' => app_path('../config/laravel-settings-ui.php')
