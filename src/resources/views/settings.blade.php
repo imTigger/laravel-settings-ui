@@ -9,7 +9,7 @@
 {!! form_rest($form) !!}
 
 <div class="form-footer">
-	<button type="submit" class="btn-success btn">{{ trans('laravel-settings-ui.button.save') }}</button>
+	<button type="submit" class="btn-success btn">{{ trans('settings.button.save') }}</button>
 </div>
 
 {!! form_end($form) !!}

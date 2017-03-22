@@ -1,5 +1,4 @@
 <?php
 return [
-    // 'view' => 'vendor.laravel-settings-ui',
-    // 'form' => 'App\Forms\LaravelSettingsForm'
+    'form' => 'App\Forms\LaravelSettingsForm'
 ];

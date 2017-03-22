@@ -31,7 +31,7 @@ class Controller extends BaseController
             $field->setValue(Setting::get($fieldName));
         };
 
-        return view($this->getView(), ['form' => $form]);
+        return view("laravel-settings-ui::settings", ['form' => $form]);
     }
 
     public function post(FormBuilder $formBuilder)
@@ -57,12 +57,8 @@ class Controller extends BaseController
 
             Setting::save();
 
-            return redirect()->route("laravel-settings-ui")->with('status', trans('laravel-settings-ui::laravel-settings-ui.message.saved'));
+            return redirect()->route("laravel-settings-ui")->with('status', trans('laravel-settings-ui::settings.message.saved'));
         }
-    }
-
-    private function getView() {
-        return Config::get("laravel-settings-ui.view", "laravel-settings-ui::laravel-settings-ui");
     }
 
     private function getForm() {

@@ -29,7 +29,7 @@ class LaravelSettingsUIServiceProvider extends ServiceProvider
         ], 'configs');
 
         $this->publishes([
-            __DIR__ . '/resources/views/laravel-settings-ui.blade.php' => resource_path('views/vendor/laravel-settings-ui.blade.php')
+            __DIR__ . '/resources/views/settings.blade.php' => resource_path('views/vendor/laravel-settings-ui/settings.blade.php')
         ], 'views');
     }
 
