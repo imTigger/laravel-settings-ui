@@ -5,6 +5,6 @@ return array (
     'saved' => 'Setting Saved!'
   ],
   'button' => [
-	'save' => 'Save'
+    'save' => 'Save'
   ]
 );

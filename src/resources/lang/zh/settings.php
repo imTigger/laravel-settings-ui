@@ -5,6 +5,6 @@ return array (
     'saved' => '设定储存成功'
   ],
   'button' => [
-	'save' => '储存'
+    'save' => '储存'
   ]
 );
