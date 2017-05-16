@@ -31,3 +31,21 @@ Route::get('/setting', ['as' => 'laravel-settings-ui', 'uses' => '\\Imtigger\\La
 Route::post('/setting', ['as' => 'laravel-settings-ui.post', 'uses' => '\\Imtigger\\LaravelSettingsUI\\Controller@post']);
 
 ```
+
+Publish config, form and view
+```bash
+php artisan vendor:publish --provider="Imtigger\LaravelSettingsUI\LaravelSettingsUIServiceProvider" 
+```
+
+### Usage
+
+Edit `app/Forms/LaravelSettingsForm.php` to add/remove fields
+All fields in this `Form` is automagically saved
+
+Edit `resources\views\vendor\laravel-settings-ui\settings.blade.php` to update view
+
+Final word: Remember use middleware to protect routes 
+
+[Laravel Form Builder Documentations](http://kristijanhusak.github.io/laravel-form-builder/)
+
+[Laravel Settings Documentations](https://github.com/anlutro/laravel-settings)
