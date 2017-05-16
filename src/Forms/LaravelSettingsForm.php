@@ -10,15 +10,15 @@ class LaravelSettingsForm extends Form
     {
         $this
             ->add('site-name', 'text', [
-                'label' => trans('backend.setting.label.website_name'),
+                'label' => 'Website Name',
                 'rules' => ['required', 'max:255']
             ])
             ->add('company-name', 'text', [
-                'label' => trans('backend.setting.label.company_name'),
+                'label' => 'Company Name',
                 'rules' => ['required', 'max:255']
             ])
             ->add('email', 'email', [
-                'label' => trans('backend.setting.label.email'),
+                'label' => 'Email',
                 'rules' => ['required', 'max:255']
             ])
         ;
