@@ -14,6 +14,13 @@
         "kris/laravel-form-builder": "^1.7",
         "anlutro/l4-settings": "^0.4.8"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Imtigger\\LaravelSettingsUI\\LaravelSettingsUIServiceProvider"
+            ]
+        }
+    },
     "autoload": {
         "psr-4": {
             "Imtigger\\LaravelSettingsUI\\": "src"
