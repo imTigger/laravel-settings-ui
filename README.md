@@ -5,6 +5,8 @@ Simple UI for [anlutro/laravel-settings](https://github.com/anlutro/laravel-sett
 
 - PHP >= 5.6.4
 - Laravel >= 5.3
+- [anlutro/laravel-settings](https://github.com/anlutro/laravel-settings) must be properly installed
+- [kristijanhusak/laravel-form-builder](https://github.com/kristijanhusak/laravel-form-builder) must be properly installed
 
 ## Installation
 
@@ -40,6 +42,7 @@ php artisan vendor:publish --provider="Imtigger\LaravelSettingsUI\LaravelSetting
 ### Usage
 
 Edit `app/Forms/LaravelSettingsForm.php` to add/remove fields
+
 All fields in this `Form` is automagically saved
 
 Edit `resources\views\vendor\laravel-settings-ui\settings.blade.php` to update view
