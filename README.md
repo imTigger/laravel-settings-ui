@@ -20,7 +20,7 @@ Add the following to your `config/app.php`:
 ```php
 'providers' => [
     ...
-    Imtigger\LaravelJobStatus\LaravelSettingsUIServiceProvider::class,
+    Imtigger\LaravelSettingsUI\LaravelSettingsUIServiceProvider::class,
 ]
 ```
 
