@@ -45,7 +45,7 @@ Edit `app/Forms/LaravelSettingsForm.php` to add/remove fields
 
 All fields in this `Form` is automagically saved
 
-Edit `resources\views\vendor\laravel-settings-ui\settings.blade.php` to update view
+Edit `resources\views\vendor\laravel-settings-ui\settings.blade.php` to adapt it to your favorite theme!
 
 Final word: Remember use middleware to protect routes 
 
