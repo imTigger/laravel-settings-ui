@@ -1,10 +1,10 @@
 {
     "name": "imtigger/laravel-settings-ui",
     "description": "Laravel Settings UI",
-    "license": "property",
+    "license": "mit",
     "authors": [
         {
-            "name": "Tiger",
+            "name": "Tiger Fok",
             "email": "tiger@tiger-workshop.com"
         }
     ],
