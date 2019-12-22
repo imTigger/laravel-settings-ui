@@ -5,9 +5,6 @@ use Illuminate\Routing\Controller as BaseController;
 use App\Forms\LaravelSettingsForm;
 use Illuminate\Support\Facades\Config;
 use Kris\LaravelFormBuilder\FormBuilder;
-use \Illuminate\Support\Facades\Input;
-use \Illuminate\Support\Facades\Redirect;
-use \Illuminate\Support\Facades\Validator;
 use \anlutro\LaravelSettings\Facade as Setting;
 
 class Controller extends BaseController
@@ -34,21 +31,18 @@ class Controller extends BaseController
         return view("laravel-settings-ui::settings", ['form' => $form]);
     }
 
-    public function post(FormBuilder $formBuilder)
+    public function post(FormBuilder $formBuilder, Request $request)
     {
         $form = $formBuilder->create($this->getForm(), [
             'method' => 'post'
         ]);
 
-        $rules = [];
-        $validator = Validator::make($form->getAllAttributes(), $rules);
-
-        if ($validator->fails()) {
-            return Redirect::to(route("laravel-settings-ui"))
-                ->withErrors($validator)
+        if (! $form->isValid()) {
+            return redirect()->back()
+                ->withErrors($form->getErrors())
                 ->withInput();
         } else {
-            $inputs = Input::only($form->getAllAttributes());
+            $inputs = $request->only($form->getAllAttributes());
 
             foreach ($inputs As $key => $value) {
                 if (empty($key)) continue;
